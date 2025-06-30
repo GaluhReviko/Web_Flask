@@ -1,0 +1,58 @@
+{% include 'header.html' %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Visualisasi Data</h1>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <!-- First Column: Wordcloud -->
+        <div class="col-lg-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Word Cloud</h6>
+                </div>
+                <div class="card-body text-center">
+                    <img src="{{ url_for('static', filename='files/wordcloud.png') }}" class="img-fluid" alt="Wordcloud">
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Column: Pie Chart -->
+        <div class="col-lg-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Diagram Lingkaran Sentimen</h6>
+                </div>
+                <div class="card-body text-center">
+                    <img src="{{ url_for('static', filename='files/pie_sentimen.png') }}" class="img-fluid" alt="Pie Chart">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Content Row 2 -->
+    <div class="row">
+
+        <!-- First Column: Bar Chart -->
+        <div class="col-lg-12">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Diagram Batang Distribusi Sentimen</h6>
+                </div>
+                <div class="card-body text-center">
+                    <img src="{{ url_for('static', filename='files/bar_sentimen.png') }}" class="img-fluid" alt="Bar Chart">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+{% include 'footer.html' %}

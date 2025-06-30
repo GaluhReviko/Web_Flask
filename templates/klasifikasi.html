@@ -1,0 +1,110 @@
+{% include 'header.html' %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0" style="color: #2b5876; font-weight: bold;">Klasifikasi Naive Bayes</h1>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-sm-12">
+            <!-- Upload & Classify Section -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3" style="background-color: #4e4376;">
+                    <h6 class="m-0 font-weight-bold text-white">
+                        <i class="fas fa-brain mr-2"></i> Klasifikasi Data Tweet
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <form method="post" action="" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1"><strong>Upload File</strong></label>
+                            <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
+                            <small class="form-text text-muted">Upload file hasil labeling dengan format .csv</small>
+
+                            {% with messages = get_flashed_messages(category_filter=["upload_gagal"]) %}
+                                {% if messages %}
+                                    <small class="form-text text-danger">{{ messages[0] }}</small>
+                                {% endif %}
+                            {% endwith %}
+
+                            {% with messages = get_flashed_messages(category_filter=["upload_berhasil"]) %}
+                                {% if messages %}
+                                    <small class="form-text text-success">{{ messages[0] }}</small>
+                                {% endif %}
+                            {% endwith %}
+
+                            {% with messages = get_flashed_messages(category_filter=["klasifikasi_data"]) %}
+                                {% if messages %}
+                                    <small class="form-text text-success">{{ messages[0] }}</small>
+                                {% endif %}
+                            {% endwith %}
+                        </div>
+                        <input type="submit" value="Upload Data" name="upload" class="btn btn-success mr-2">
+                        <input type="submit" value="Klasifikasi Data" name="klasifikasi" class="btn btn-success">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Visualisasi -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3" style="background-color: #4e4376;">
+            <h6 class="m-0 font-weight-bold text-white">
+                <i class="fas fa-chart-area mr-2"></i> Visualisasi Data
+                <a href="/visualisasi" target="_blank" class="btn btn-sm btn-primary float-right shadow-sm">
+                    <i class="fas fa-chart-pie fa-sm text-white-50"></i> Visualisasi
+                </a>
+            </h6>
+        </div>
+    </div>
+
+    <!-- Hasil Klasifikasi -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3" style="background-color: #4e4376;">
+            <h6 class="m-0 font-weight-bold text-white">
+                <i class="fas fa-table mr-2"></i> Hasil Klasifikasi
+                <a href="{{ url_for('static', filename='files/Data Klasifikasi.csv') }}" target="_blank"
+                    class="btn btn-sm btn-warning float-right shadow-sm">
+                    <i class="fas fa-download fa-sm text-white-50"></i> Download Data
+                </a>
+            </h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                {% for table in tables2 %} 
+                    {{ table|safe }}
+                {% endfor %}
+            </div>
+            <div class="alert alert-success mt-3" role="alert">
+                <strong>Akurasi Naive Bayes:</strong> {{ accuracy }}%
+            </div>
+        </div>
+    </div>
+
+    <!-- Confusion Matrix -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3" style="background-color: #4e4376;">
+            <h6 class="m-0 font-weight-bold text-white">
+                <i class="fas fa-project-diagram mr-2"></i> Hasil Confusion Matrix
+                <a href="{{ url_for('static', filename='files/Data Confusion Matrix.csv') }}" target="_blank"
+                    class="btn btn-sm btn-warning float-right shadow-sm">
+                    <i class="fas fa-download fa-sm text-white-50"></i> Download Data
+                </a>
+            </h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                {% for table in tables %}
+                    {{ table|safe }}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+{% include 'footer.html' %}

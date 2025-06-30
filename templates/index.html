@@ -1,0 +1,39 @@
+{% include 'header.html' %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0" style="color: #2b5876; font-weight: bold;">Dashboard</h1>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row mb-4">
+
+        <!-- Illustrations -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3" style="background-color: #4e4376;">
+                <h5 class="m-0 font-weight-bold text-center text-white">
+                    <i class="fas fa-chart-line mr-2"></i> Website Analisis Sentimen Netizen terhadap Program IKN
+                </h5>
+            </div>
+            <div class="card-body">
+                <!-- <img src="{{ url_for('static', filename='img/Logo Polije.png') }}" class="img-fluid rounded mx-auto d-block" width="400px" alt="Responsive image"> -->
+                <br>
+                <p style="font-size: 16px; color: #555; text-align: justify;">
+                    Website ini dikembangkan untuk menganalisis sentimen masyarakat terhadap kebijakan pemindahan Ibu Kota Negara (IKN), berdasarkan opini yang diambil dari media sosial Twitter. Dengan menggunakan algoritma <i>Naive Bayes</i>, sistem ini dapat mengelompokkan komentar netizen ke dalam lima kategori: sangat mendukung, mendukung, netral, tidak mendukung, dan sangat tidak mendukung.
+                </p>
+                <p style="font-size: 16px; color: #555; text-align: justify;">
+                    Fitur-fitur utama dalam website ini meliputi unggah data CSV, pemrosesan otomatis (pembersihan, normalisasi, stemming, dan terjemahan), pelabelan sentimen, serta evaluasi kinerja model menggunakan akurasi dan nilai F1-score.
+                </p>
+                <p style="font-size: 16px; color: #555; text-align: justify;">
+                    <strong>Galuh Reviko Satya Kirana</strong><br>
+                    E31220095
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+{% include 'footer.html' %}

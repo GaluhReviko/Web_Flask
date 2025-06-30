@@ -1,6 +1,5 @@
-,true:Mendukung,true:Netral,true:Sangat Mendukung,true:Sangat Tidak Mendukung,true:Tidak Mendukung
-pred:Mendukung,9,159,0,0,0
-pred:Netral,0,402,0,0,0
-pred:Sangat Mendukung,0,15,0,0,0
-pred:Sangat Tidak Mendukung,0,5,0,0,0
-pred:Tidak Mendukung,0,31,0,0,0
+,true:Mendukung,true:Netral,true:Sangat Mendukung,true:Tidak Mendukung
+pred:Mendukung,0,4,0,0
+pred:Netral,0,9,0,0
+pred:Sangat Mendukung,0,0,0,0
+pred:Tidak Mendukung,0,2,0,0
